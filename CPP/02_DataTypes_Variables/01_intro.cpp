@@ -1,4 +1,5 @@
 #include <iostream>
+#include<string>
 using namespace std;
 
 int main(){
@@ -22,9 +23,10 @@ int main(){
 
     cout << "Enter your name : ";
 
-    cin >> name;
+    // cin >> name;
+    getline(cin, name);
 
-    cout << "Number is : " << name << endl;
+    cout << "Name is : " << name << endl;
 
 }
 
