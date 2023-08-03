@@ -1,3 +1,1 @@
-    // if(condition){
-    //     execute
-    // }
+out << "Your grade is E" << 
