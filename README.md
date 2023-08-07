@@ -7,6 +7,7 @@ This repository contains all the examples and exercises being done in the class.
 2. [Data Types & Variables](/CPP/02_DataTypes_Variables/)
 3. [Operators](/CPP/03_Operators/)
 4. [Control Statements](/CPP/04_ControlStatements/)
+5. [Functions](/CPP/05_Functions/)
 
 ## FAQs
 
