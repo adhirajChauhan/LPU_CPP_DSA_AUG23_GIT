@@ -1,4 +1,5 @@
 #include <iostream>
+#include<map>
 using namespace std;
 
 class Node{
@@ -68,6 +69,39 @@ void deletionAtHead(Node* &head){
     delete toDelete;
 }
 
+bool isCircular(Node* head){
+
+    Node* temp = head->next;
+
+    while(temp!=NULL && temp!=head){
+        temp=temp->next;
+    }
+
+    if(temp=head) return true;
+
+    return false;
+}
+
+bool detectLoop(Node* head){
+    if(head == NULL){
+        return false;
+    }
+
+    map<Node*, bool> visited;
+    Node* temp = head;
+
+    while(temp != NULL){
+
+        if(visited[temp] == true){
+            return true;
+        }
+        visited[temp] = true;
+        temp = temp -> next;
+    }
+
+    return false;
+}
+
 int main(){
     Node *head = NULL;
     insertAtTail(head,1);
@@ -81,4 +115,13 @@ int main(){
     deletion(head, 20);
 
     display(head);
+
+    cout << endl;
+
+    if(detectLoop(head)){
+        cout << "Yes" << endl;
+    }
+    else{
+        cout << "No" << endl;
+    }
 }
