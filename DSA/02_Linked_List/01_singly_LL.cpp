@@ -102,6 +102,22 @@ bool detectLoop(Node* head){
     return false;
 }
 
+Node* reverse(Node* &head){
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* next;
+
+    while(curr!=NULL){
+        next = curr->next;
+        curr->next = prev;
+
+        prev = curr;
+        curr = next;
+    }
+
+    return prev; //new head
+}
+
 int main(){
     Node *head = NULL;
     insertAtTail(head,1);
@@ -112,16 +128,19 @@ int main(){
     display(head);
     cout << endl;
 
-    deletion(head, 20);
+    // deletion(head, 20);
 
     display(head);
 
     cout << endl;
 
-    if(detectLoop(head)){
-        cout << "Yes" << endl;
-    }
-    else{
-        cout << "No" << endl;
-    }
+    // if(detectLoop(head)){
+    //     cout << "Yes" << endl;
+    // }
+    // else{
+    //     cout << "No" << endl;
+    // }
+
+    Node* newHead = reverse(head);
+    display(newHead);
 }
