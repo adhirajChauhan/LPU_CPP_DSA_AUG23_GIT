@@ -118,13 +118,37 @@ Node* reverse(Node* &head){
     return prev; //new head
 }
 
+Node* kReverese(Node* head, int k){
+    Node* prev = NULL;
+    Node* curr = head;
+    Node* next = NULL;
+
+    int count = 0;
+    while(curr != NULL && count < k){
+        next = curr -> next;
+        curr->next = prev;
+
+        prev = curr;
+        curr = next;
+        count++;
+    }
+
+    if(next!=NULL){
+        head->next = kReverese(next,k);
+    }
+
+    return prev;
+
+}
+
 int main(){
     Node *head = NULL;
-    insertAtTail(head,1);
-    insertAtTail(head,2);
     insertAtTail(head,3);
-    insertAtHead(head, 10);
-    insertAtHead(head, 20);
+    insertAtTail(head,4);
+    insertAtTail(head,5);
+    insertAtTail(head,6);
+    insertAtHead(head, 2);
+    insertAtHead(head, 1);
     display(head);
     cout << endl;
 
@@ -141,6 +165,6 @@ int main(){
     //     cout << "No" << endl;
     // }
 
-    Node* newHead = reverse(head);
+    Node* newHead = kReverese(head,3);
     display(newHead);
 }

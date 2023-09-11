@@ -50,4 +50,21 @@ int main(){
 //5
 //Dangling pointers - a pointer pointing towards a memory location that has been deleted
 
+
+
+
+
+
+//--------------------------------------
+//REVISION
+
+int i = 11;
+
+int* ptr1 = &i; //single pointer
+int** ptr2 = &ptr1; //Double pointer
+
+cout << "Value of i using ptr1 : " << *ptr1 << endl;
+cout << "Value of i using ptr2 : " << **ptr2 << endl;
+
+
 }
