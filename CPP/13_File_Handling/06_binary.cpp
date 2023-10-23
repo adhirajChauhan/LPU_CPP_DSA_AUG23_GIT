@@ -57,9 +57,8 @@ bool Update(int id, string add){
 
             strcpy(obj.address, add.c_str());
 
-            // file.seekg(file.tellg() - sizeof(obj), ios::beg);
+            file.seekg(file.tellg() - sizeof(obj), ios::beg);
             file.write((char*)&obj, sizeof(obj));
-
             break;
         }
     }
